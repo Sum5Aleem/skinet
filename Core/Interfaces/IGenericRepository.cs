@@ -14,5 +14,6 @@ namespace Core.Interfaces
         Task<T> GetById(BaseSpecification<T> specification);
         Task<IReadOnlyList<T>> GetAll(BaseSpecification<T> specification);
 
+        Task<int> GetCount(BaseSpecification<T> specification);
     }
 }
