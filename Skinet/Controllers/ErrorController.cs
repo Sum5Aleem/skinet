@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
     [Route("errors/{code}")]
-    public class Error : BaseApi
+    public class ErrorController : BaseApiController
     {        
         public IActionResult Errors(int code)
         {

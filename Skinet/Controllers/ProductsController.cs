@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    public class Items : BaseApi
+    public class ProductsController : BaseApiController
     {
 
         private readonly IProductRepository _productsRepo;
         private readonly IMapper _mapper;
 
-        public Items(IProductRepository productsRepo,
+        public ProductsController(IProductRepository productsRepo,
             IMapper mapper)
         {
             _productsRepo = productsRepo;

@@ -9,22 +9,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    public class Basket : BaseApi
+    public class BasketController : BaseApiController
     {
         private readonly IBasketRepository _basketRepository;
 
-        public Basket(IBasketRepository basketRepository)
+        public BasketController(IBasketRepository basketRepository)
         {
             _basketRepository = basketRepository;
         }
         [HttpGet]
-        public async Task<ActionResult<Core.Entities.Basket>> GetBasket(string id)
+        public async Task<ActionResult<Basket>> GetBasket(string id)
         {
             var basket = await _basketRepository.GetBasket(id);
             return Ok(basket);
         }
         [HttpPost]
-        public async Task<ActionResult<Core.Entities.Basket>> UpdateBasket(Core.Entities.Basket basket)
+        public async Task<ActionResult<Basket>> UpdateBasket(Basket basket)
         {
             var updatedBasket = await _basketRepository.UpdateBasket(basket);
             return Ok(updatedBasket);
